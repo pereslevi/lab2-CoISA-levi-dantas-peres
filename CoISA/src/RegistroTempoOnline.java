@@ -6,11 +6,13 @@ public class RegistroTempoOnline {
     public RegistroTempoOnline(String disciplina) {
         this.nomeDisciplina = disciplina;
         this.tempoOnlineEsperado = 120;
+        this.tempo = 0;
     }
 
     public RegistroTempoOnline(String disciplina, int tempoOnline) {
         this.nomeDisciplina = disciplina;
         this.tempoOnlineEsperado = tempoOnline;
+        this.tempo = 0;
     }
 
 
@@ -31,6 +33,5 @@ public class RegistroTempoOnline {
     public String toString() {
         return "Nome Disciplina: " + nomeDisciplina + "\n" + "Tempo Realizado: " + tempo + "\n" + "Tempo Online Esperado: " + tempoOnlineEsperado;
     }
-
 
 }
