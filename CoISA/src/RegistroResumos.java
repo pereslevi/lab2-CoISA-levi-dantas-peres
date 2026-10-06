@@ -29,10 +29,12 @@ public class RegistroResumos {
         String resultado = "";
 
         for (int i = 0; i < numeroDeResumos; i++) {
-            for(int i = 0; i < pos; i++){
-                if(i == 0){this.saidaTemas = this.resumos[i].getTema();}
-                else{this.saidaTemas += " | " + this.resumos[i].getTema();}
+            if(i == 0){
+                this.saidaTemas = this.resumos[i].getTema();
+            } else {
+                this.saidaTemas += " | " + this.resumos[i].getTema();
             }
+        }
             return "- " + pos + " resumo(s) casdatrado(s) \n" + "- " + this.saidaTemas;
         }
 
