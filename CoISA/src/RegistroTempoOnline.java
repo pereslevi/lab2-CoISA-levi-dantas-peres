@@ -31,7 +31,7 @@ public class RegistroTempoOnline {
 
     @Override
     public String toString() {
-        return "Nome Disciplina: " + nomeDisciplina + "\n" + "Tempo Realizado: " + tempo + "\n" + "Tempo Online Esperado: " + tempoOnlineEsperado;
+        return nomeDisciplina + " " + tempo + "/" + tempoOnlineEsperado;
     }
 
 }

@@ -1,6 +1,7 @@
 public class Disciplina {
     private String nomeDisciplina;
     private int horasEstudo;
+    private double media;
     private double[] notas;
 
     public Disciplina(String disciplina) {
@@ -18,13 +19,16 @@ public class Disciplina {
     }
 
     public boolean aprovado() {
-
-        int soma = 0;
-        for (int i = 0; i < 4 ; i++) {
+        double soma = 0;
+        int add = 0;
+        for (int i = 4; i > 0 ; i--) {
+            if (!(notas[i] == 0.0) && add <= 3) {
             soma += notas[i];
+            add ++;
+            }
         }
 
-        double media = soma/4;
+        this.media = soma/add;
 
         if (media >= 7) {
             return true;
@@ -35,7 +39,7 @@ public class Disciplina {
 
     @Override
     public String toString() {
-        return nomeDisciplina + "\n" + "Horas de Estudo: " + horasEstudo + "\n" + "Notas: " + notas;
+        return nomeDisciplina + " " + media + " " + notas;
     }
 
 }

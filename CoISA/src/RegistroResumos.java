@@ -2,52 +2,26 @@ public class RegistroResumos {
     private Resumo[] resumos;
     private int pos;
     private String saidaTemas;
-    private int numeroDeResumos;
+    private int quantidade;
 
-    public RegistroResumos(int numeroDeResumos){
-        this.resumos = new Resumo[numeroDeResumos] ;
-        this.pos = 0;
-
+    public RegistroResumos(int quantidade){
+        this.quantidade += quantidade;
     }
 
     public void adiciona(String tema, String conteudo) {
-        this.resumos[pos % this.resumos.length] = new Resumo(tema, conteudo);
-
-        pos++;
+        this.resumos[pos] = tema + conteudo;
     }
 
     public String[] pegaResumos() {
-        String[] tempResumos = new String[conta()];
-        for (int i = 0; i < conta(); i++){
-            tempResumos[i] = this.resumos[i].getTema() + ": " + this.resumos[i].getConteudo();
-        }
-
-        return tempResumos;
+        return " ";
     }
 
     public String imprimeResumos() {
-        String resultado = "";
-
-        for (int i = 0; i < numeroDeResumos; i++) {
-            if(i == 0){
-                this.saidaTemas = this.resumos[i].getTema();
-            } else {
-                this.saidaTemas += " | " + this.resumos[i].getTema();
-            }
-        }
-            return "- " + pos + " resumo(s) casdatrado(s) \n" + "- " + this.saidaTemas;
-        }
-
-        return resultado;
+        return saidaTemas;
     }
 
     public int conta() {
-        if(pos >= this.resumos.length){
-            return this.resumos.length;
-        } else {
-            return pos;
-        }
-
+        return 1;
     }
 
     public boolean temResumo(String tema) {
